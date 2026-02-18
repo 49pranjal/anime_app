@@ -12,6 +12,7 @@ data class AnimeDetailEntity(
     val score: Double?,
     val imageUrl: String?,
     val trailerUrl: String?,
+    val embedUrl: String?,
     val genres: String,
     val cast: String,
     val updatedAt: Long

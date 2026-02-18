@@ -33,9 +33,6 @@ fun AnimeEntity.toUi(): Anime {
 
 fun AnimeDetailDto.toEntity(): AnimeDetailEntity {
 
-    val youtubeId = trailer?.youtube_id
-        ?: extractYoutubeId(trailer?.embed_url)
-
     return AnimeDetailEntity(
         id = mal_id,
         title = title,
@@ -43,7 +40,8 @@ fun AnimeDetailDto.toEntity(): AnimeDetailEntity {
         episodes = episodes,
         score = score,
         imageUrl = images.jpg.image_url,
-        trailerUrl = youtubeId,
+        trailerUrl = trailer?.youtube_id,
+        embedUrl = extractYoutubeId(trailer?.embed_url),
         genres = genres.joinToString { it.name },
         cast = producers?.joinToString { it.name } ?: "",
         updatedAt = System.currentTimeMillis()
@@ -59,6 +57,7 @@ fun AnimeDetailEntity.toUI(): AnimeDetail {
         score = score,
         imageUrl = imageUrl,
         trailerUrl = trailerUrl,
+        embedUrl = embedUrl,
         genres = genres,
         cast = cast
     )

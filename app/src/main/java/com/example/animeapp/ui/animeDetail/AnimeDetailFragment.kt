@@ -87,41 +87,46 @@ class AnimeDetailFragment : Fragment() {
         "Cast: ${data.cast}".also { binding.tvCastAnimeDetail.text = it }
         binding.tvSynopsisAnimeDetail.text = data.synopsis ?: "-"
 
-        binding.ivPosterAnimeDetail.visibility = View.VISIBLE
-        binding.trailerAnimeDetail.visibility = View.GONE
-
-        Glide.with(binding.ivPosterAnimeDetail)
-            .load(data.imageUrl)
-            .placeholder(R.drawable.placeholder_anime)
-            .error(R.drawable.placeholder_anime)
-            .into(binding.ivPosterAnimeDetail)
-
-        // ⭐ Trailer vs poster logic
+        // Trailer vs poster logic
         if (!data.trailerUrl.isNullOrBlank()) {
-            binding.btnYoutubeAnimeDetail.visibility = View.VISIBLE
-
-            binding.btnYoutubeAnimeDetail.setOnClickListener {
-                val intent = Intent(
-                    Intent.ACTION_VIEW,
-                    (Constant.YOUTUBE_BASE_URL + data.trailerUrl).toUri()
-                )
-                startActivity(intent)
-            }
-
+            binding.ivPosterAnimeDetail.visibility = View.GONE
+            binding.trailerAnimeDetail.visibility = View.VISIBLE
+            binding.btnYoutubeAnimeDetail.visibility = View.GONE
 
             // Code for running You Tube player
-            /*binding.trailerAnimeDetail.addYouTubePlayerListener(
+            binding.trailerAnimeDetail.addYouTubePlayerListener(
                 object : AbstractYouTubePlayerListener() {
                     override fun onReady(youTubePlayer: YouTubePlayer) {
                         //youTubePlayer.loadVideo(data.trailerUrl, 0f)
                         youTubePlayer.loadVideo(data.trailerUrl, 0f)
                     }
                 }
-            )*/
-
+            )
         } else {
-            binding.btnYoutubeAnimeDetail.visibility = View.GONE
+            binding.ivPosterAnimeDetail.visibility = View.VISIBLE
+            binding.trailerAnimeDetail.visibility = View.GONE
+
+            Glide.with(binding.ivPosterAnimeDetail)
+                .load(data.imageUrl)
+                .placeholder(R.drawable.placeholder_anime)
+                .error(R.drawable.placeholder_anime)
+                .into(binding.ivPosterAnimeDetail)
+
+            if (!data.embedUrl.isNullOrBlank()) {
+                binding.btnYoutubeAnimeDetail.visibility = View.VISIBLE
+
+                binding.btnYoutubeAnimeDetail.setOnClickListener {
+                    val intent = Intent(
+                        Intent.ACTION_VIEW,
+                        (Constant.YOUTUBE_BASE_URL + data.embedUrl).toUri()
+                    )
+                    startActivity(intent)
+                }
+            } else {
+                binding.btnYoutubeAnimeDetail.visibility = View.GONE
+            }
         }
+
     }
 
     override fun onDestroyView() {
