@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:strokeWidth="0dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivAnimePoster"
+            android:layout_width="80dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/anime_poster"
+            android:src="@drawable/placeholder_anime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAnimeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/anime_title"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/ivAnimePoster"
+            app:layout_constraintTop_toTopOf="@id/ivAnimePoster"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="12dp" />
+
+
+        <TextView
+            android:id="@+id/tvAnimeEpisodes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Episodes: 24"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvAnimeTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvAnimeTitle"
+            android:layout_marginTop="6dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutAnimeRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/tvAnimeTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvAnimeEpisodes"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/ivAnimeStar"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_star"
+                android:contentDescription="@string/rating_icon" />
+
+            <TextView
+                android:id="@+id/tvAnimeRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="8.5"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

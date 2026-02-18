@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Anime App</string>
+    <string name="anime_list">Anime List</string>
+    <string name="anime_detail">Anime Detail</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="anime_poster">Anime Poster</string>
+    <string name="anime_title">Anime Title</string>
+    <string name="rating_icon">Rating Star</string>
+    <string name="watch_on_youtube">Watch Trailer on YouTube</string>
+    <string name="animeid_argKey">animeId</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="no_anime_available">No anime available</string>
+</resources>
