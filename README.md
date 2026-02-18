@@ -174,3 +174,15 @@ Navigation | Jetpack Navigation Component |
 4. Run on emulator or physical device  
 
 _No API key required — Jikan is public._
+
+---
+
+## 📸 Screenshots
+
+| AnimeList (Without Internet) | AnimeList (With Internet Sync) |
+|------|---------------|
+| ![image alt](https://github.com/49pranjal/anime_app/blob/bb2a3f81c8da7b2a1bdd8318fc004f72f5d23126/screenshots/Animeapp_AnimeList%20(No%20Internet).png) | ![image alt](https://github.com/49pranjal/anime_app/blob/bb2a3f81c8da7b2a1bdd8318fc004f72f5d23126/screenshots/Animeapp_AnimeList%20(With%20Internet%20sync).png) |
+
+| AnimeDetail (With EmbeddedUrl) | AnimeDetail (Without EmbeddedUrl) |
+|--------|-----------|
+| ![image alt](https://github.com/49pranjal/anime_app/blob/bb2a3f81c8da7b2a1bdd8318fc004f72f5d23126/screenshots/Animeapp_AnimeDetail%20(With%20Embedded%20Url).png) | ![image alt](https://github.com/49pranjal/anime_app/blob/bb2a3f81c8da7b2a1bdd8318fc004f72f5d23126/screenshots/Animeapp_AnimeDetail%20(Without%20Embedded%20Url).png) |
